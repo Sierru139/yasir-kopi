@@ -8,13 +8,24 @@
     <title>Yasir Kopi</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-        
+
         html {
             scroll-behavior: smooth;
         }
         
         body {
             font-family: 'Raleway', sans-serif;
+            height: 1000px;
+        }
+
+        .dot {
+            background-color: rgb(226, 232, 240, 0.96);
+            transition: .5s;
+            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+        }
+        .dot3 {
+            background-color: rgb(203, 213, 225, 0.96);
+            transition: 0.3s;
         }
 
         #home {
@@ -37,7 +48,7 @@
 <body>
 <!-- ===================== NAVIGATION BAR =====================-->
 <!-- ==========================================================-->
-<div class=" left-0 right-0 h-16 bg-[rgba(205,151,93,0.81)] flex items-center justify-between px-20">
+<nav id="nav" class="left-0 right-0 h-16 bg-[rgba(205,151,93,0.81)] flex items-center justify-between px-20">
     <span class="font-bold jdlnav text-2xl"><i>Kop</i><i class="bg-clip-text text-transparent bg-gradient-to-l from-[#c9a570] via-[#9a6c4a] to-[#c9a570]">Yas</i></span>
     <div>
         <ul class="flex items-center gap-x-10 font-semibold">
@@ -47,14 +58,14 @@
         </ul>
     </div>
     <div class="flex gap-x-6">
-        <a href="about.html">
+        <a href="#menu">
             <i class="fas fas fa-shopping-cart"></i>
         </a>
         <a href="contact.html">
             <i class="fas fa-phone"></i>
         </a>
     </div>
-</div>
+</nav>
 <!-- ==========================================================-->
 <!-- ===================== NAVIGATION BAR END =====================-->
 
@@ -83,5 +94,9 @@
 <!-- ========================================================= -->
 <!-- ===================== HOMEPAGE END =====================-->
 
+
+<script>
+    
+</script>
 </body>
 </html>
