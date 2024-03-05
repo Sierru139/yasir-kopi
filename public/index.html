@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style/output.css">
+    <link rel="stylesheet" href="output.css">
     <title>Yasir Kopi</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
@@ -12,20 +12,9 @@
         html {
             scroll-behavior: smooth;
         }
-        
+
         body {
             font-family: 'Raleway', sans-serif;
-            height: 1000px;
-        }
-
-        .dot {
-            background-color: rgb(226, 232, 240, 0.96);
-            transition: .5s;
-            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-        }
-        .dot3 {
-            background-color: rgb(203, 213, 225, 0.96);
-            transition: 0.3s;
         }
 
         #home {
@@ -37,24 +26,71 @@
         .jdlhome {
             text-shadow: 0px 0px 10px rgba(99, 58, 32, 0.6);
         }
+
         .jdlnav {
-            text-shadow: 0px 0px 2px rgba(122, 59, 19, 0.9);
+            text-shadow: 0px 0px 3px rgba(216, 182, 160, 0.9);
+            transition-duration: .4s;
         }
+        
+        .jdlnav:hover {
+            text-shadow: 0px 0px 10px rgba(215, 107, 39, 0.9);
+        }
+
         .jdlhome span {
             text-shadow: 0px 0px 20px #9c775dbf;
+        }
+
+        .coffeeimg1, .coffeeimg2, .coffeeimg3, .coffeeimg4, .coffeeimg5, .desc1coff, .desc2coff, .desc3coff, .desc4coff, .desc5coff{
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .desc1coff, .desc2coff, .desc3coff, .desc4coff, .desc5coff{
+            animation: masuk 2s ease-in-out;
+        }
+
+        .coffeeimg1, .desc1coff {
+            background-image: url(img/arabika.jpg);
+        }
+        .coffeeimg2, .desc2coff {
+            background-image: url(img/Americano.jpg);
+        }
+        .coffeeimg3, .desc3coff {
+            background-image: url(img/Cappuchino.jpg);
+        }
+        .coffeeimg4, .desc4coff {
+            background-image: url(img/Latte.jpg);
+        }
+        .coffeeimg5, .desc5coff {
+            background-image: url(img/Macchiato.jpg);
+        }
+
+        .menu-coffee {
+            transition-duration:1s;
+        }
+
+        .menu-coffee:hover {
+            box-shadow: inset 0px -200px 0px rgba(55, 33, 22, 0.982);
+        }
+        
+        @keyframes masuk {
+            0% {translate-y: 300px;}
+            100% {translate-y: 0;}
         }
     </style>
 </head>
 <body>
 <!-- ===================== NAVIGATION BAR =====================-->
 <!-- ==========================================================-->
-<nav id="nav" class="left-0 right-0 h-16 bg-[rgba(205,151,93,0.81)] flex items-center justify-between px-20">
-    <span class="font-bold jdlnav text-2xl"><i>Kop</i><i class="bg-clip-text text-transparent bg-gradient-to-l from-[#c9a570] via-[#9a6c4a] to-[#c9a570]">Yas</i></span>
+<nav id="nav" class="left-0 right-0 h-16 bg-[#c6783fbf] flex items-center justify-between px-20 backdrop-blur-sm">
+    <a href="#" class="font-bold italic text-2xl"><span>Kop</span><span class="bg-clip-text text-transparent bg-gradient-to-l from-[#a28567] via-[#9a6c4a] to-[#a28567]">Yas</span></a>
     <div>
         <ul class="flex items-center gap-x-10 font-semibold">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#menu">Menu</a>
+            <a href="#home" class="hover:underline active:text-white">Home</a>
+            <a href="#product" class="hover:underline active:text-white">Product</a>
+            <a href="#about" class="hover:underline active:text-white">About Us</a>
+            <a href="#contact" class="hover:underline active:text-white">Contact</a>
         </ul>
     </div>
     <div class="flex gap-x-6">
@@ -66,14 +102,14 @@
         </a>
     </div>
 </nav>
-<!-- ==========================================================-->
+<!-- ==============================================================-->
 <!-- ===================== NAVIGATION BAR END =====================-->
 
 
 
 <!-- ===================== HOME PAGE =====================-->
 <!-- ========================================================= -->
-<main id="home" class="h-screen grid grid-cols-2">
+<section id="home" class="h-screen grid grid-cols-2">
     <!-- Desc /////////////////-->
     <div class="flex flex-col col-span-1 items-start justify-center pl-10">
         <!-- Heading -->
@@ -83,20 +119,118 @@
         <!-- Paragraph -->
         <p class="mt-6 text-2xl text-[#e8bd7d] font-light w-[]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, consectetur. ~</p>
         <!-- Button -->
-        <button class="px-6 py-2 bg-[#8b652c] active:bg-[#6e4b20]  rounded-md mt-6 font-semibold text-white duration-150 hover:shadow-[0px_5px_5px_-5px_rgba(235,235,235,0.70);] hover:-translate-y-[1px]">Beli Sekarang</button>
+        <button class="px-6 py-2 bg-[#8b652c]  active:bg-[#6e4b20]  rounded-md mt-6 font-semibold text-white duration-150 hover:-translate-y-[1px]">Beli Sekarang</button>
     </div>
 
     <!-- Coffee Img ////////////-->
-    <div class="bg-['url='img/'']">
+    <div class="">
 
     </div>
-</main>
+</section>
 <!-- ========================================================= -->
 <!-- ===================== HOMEPAGE END =====================-->
 
+<!-- /////////////////////////////////////////////////////// -->
+
+
+<section id="product" class="h-screen bg-[#a96738] flex items-start">
+    <div class="w-[70vh] h-full bg-red-400 flex flex-col">
+        <div class="h-[45%] bg-[#cb9544] z-10 overflow-hidden">
+            <div id="descNone" class="h-full w-full backdrop-blur-sm p-5">
+                <h1 class="text-3xl font-semibold">Pilih Kopimu</h1>
+                <p>Pilih kopi yang sesuai dengan keadaan hati anda, pilih dengan ikhlas 😊~</p>
+            </div>
+            <div class="menuDesc text-white p-5 h-full w-full hidden desc1coff">
+                <h1 class="text-3xl font-semibold">Kopi Arabika</h1>
+                <p class="">Lorem, ipsum dolor.</p>
+            </div>
+            <div class="menuDesc text-white p-5 h-full w-full hidden desc2coff">
+                <h1 class="text-3xl font-semibold">Kopi Americano</h1>
+                <p class="">Lorem, ipsum dolor.</p>
+            </div>
+            <div class="menuDesc text-white p-5 h-full w-full hidden desc3coff">
+                <h1 class="text-3xl font-semibold">Kopi Capuccino</h1>
+                <p class="">Lorem, ipsum dolor.</p>
+            </div>
+            <div class="menuDesc text-white p-5 h-full w-full hidden desc4coff">
+                <h1 class="text-3xl font-semibold">Kopi Latte</h1>
+                <p class="">Lorem, ipsum dolor.</p>
+            </div>
+            <div class="menuDesc text-white p-5 h-full w-full hidden desc5coff">
+                <h1 class="text-3xl font-semibold">Kopi Macchiato</h1>
+                <p class="">Lorem, ipsum dolor.</p>
+            </div>
+        </div>
+        <div class="h-[60%] grid grid-rows-5 cursor-pointer">
+            <div class="text-yellow-500 flex items-center text-2xl border-b border-gray-400 coffeeimg1">
+                <p class="w-full px-8 flex items-center h-full backdrop-blur-[2px] menu-coffee bg-[rgba(0,0,0,0.4)]" onclick="showMenu(1)">Kopi Arabika</p>
+            </div>
+            <div class="text-yellow-500 flex items-center text-2xl border-b border-gray-400 coffeeimg2">
+                <p class="w-full px-8 flex items-center h-full backdrop-blur-[2px] menu-coffee bg-[rgba(0,0,0,0.4)]" onclick="showMenu(2)">Kopi Americano</p>
+            </div>
+            <div class="text-yellow-500 flex items-center text-2xl border-b border-gray-400 coffeeimg3">
+                <p class="w-full px-8 flex items-center h-full backdrop-blur-[2px] menu-coffee bg-[rgba(0,0,0,0.4)]" onclick="showMenu(3)">Kopi Capuccino</p>
+            </div>
+            <div class="text-yellow-500 flex items-center text-2xl border-b border-gray-400 coffeeimg4">
+                <p class="w-full px-8 flex items-center h-full backdrop-blur-[2px] menu-coffee bg-[rgba(0,0,0,0.4)]" onclick="showMenu(4)">Kopi Latte</p>
+            </div>
+            <div class="text-yellow-500 flex items-center text-2xl border-b border-gray-400 coffeeimg5">
+                <p class="w-full px-8 flex items-center h-full backdrop-blur-[2px] menu-coffee bg-[rgba(0,0,0,0.4)]" onclick="showMenu(5)">Kopi Macchiato</p>
+            </div>
+        </div>
+    </div>
+    <div class="h-full w-full text-white" style="background-image: url(img/grunge-style-background-with-old-wooden-texture.jpg); background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <div class="h-full flex ">
+            <div class="w-[40%] p-5">
+                <div class="h-[42%] border-b">
+                    <h3 class="font-semibold text-4xl">Kopi Arabika</h3>
+                    <p class="text-2xl">Rp 35.000,00-</p>
+                    <p class="my-1">Rating :</p>
+                    <p class="text-yellow-300 text-2xl p-1 mt-2">
+                        <i class="fas fas fa-star"></i>
+                        <i class="fas fas fa-star"></i>
+                        <i class="fas fas fa-star"></i>
+                        <i class="fas fas fa-star"></i>
+                        <i class="far fas fa-star-half"></i>
+                    </p>
+                    <button class="px-6 py-2 bg-[#8b652c] active:bg-[#6e4b20] rounded-md mt-6 font-semibold text-white duration-150 hover:-translate-y-[1px]">Beli Sekarang</button>
+                </div>
+                <div class="h-[58%]">
+                    <div>
+                        <h4 class="text-xl">Rasa :</h4>
+                        <div class="grid grid-rows-2 grid-cols-2 border-b">
+                            <p>Pahit <span class="text-xl text-yellow-300">80%</span></p>
+                            <p>Manis <span class="text-xl text-yellow-300">13%</span></p>
+                            <p>Asin <span class="text-xl text-yellow-300">6%</span></p>
+                            <p>Asam <span class="text-xl text-yellow-300">0%</span></p>
+                        </div>
+                    </div>
+                    <div class="">
+                        <h3 class="text-xl mt-2">Tentang Kopi ini:</h3>
+                        <p class="text-justify mt-2">Kopi Americano adalah minuman kopi yang terbuat dari espresso dan air panas. Dikenal dengan rasa kuat dan aroma yang memikat, Americano adalah pilihan populer bagi pecinta kopi yang menginginkan kombinasi antara kekuatan espresso dan kelegaan air panas.</p>
+                    </div>
+                </div>
+            </div>
+            <iframe class="h-full w-[60%]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254329.69530337202!2d119.23781107383378!3d-5.119574430838491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbf02913ab952cf%3A0x411b5b4ddbe2913d!2sMakassar%20City%2C%20South%20Sulawesi!5e0!3m2!1sen!2sid!4v1709619382176!5m2!1sen!2sid" ></iframe>
+        </div>
+    </div>
+</section>
 
 <script>
-    
+    function showMenu(menuNumber) {
+        let descNone = document.getElementById("descNone");
+        let menuDesc = document.querySelector(".menuDesc.desc" + menuNumber + "coff");
+        
+        // Hide all menu descriptions
+        document.querySelectorAll('.menuDesc').forEach(desc => {
+            desc.classList.add("hidden");
+        });
+        
+        // Show the selected menu description
+        descNone.classList.add("hidden");
+        menuDesc.classList.remove("hidden");
+    }
 </script>
+
 </body>
 </html>
