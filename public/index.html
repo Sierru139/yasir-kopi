@@ -66,6 +66,10 @@
             background-image: url(img/Macchiato.jpg);
         }
 
+        .menuAnim {
+            animation: detmasuk 0.3s linear;
+        }
+
         .menu-coffee {
             transition-duration:1s;
         }
@@ -77,6 +81,11 @@
         @keyframes masuk {
             0% {translate-y: 300px;}
             100% {translate-y: 0;}
+        }
+
+        @keyframes detmasuk {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
         }
     </style>
 </head>
@@ -132,55 +141,89 @@
 <!-- /////////////////////////////////////////////////////// -->
 
 
+<!-- ===================== PRODUCT PAGE =====================-->
+<!-- ========================================================= -->
+
 <section id="product" class="h-screen bg-[#a96738] flex items-start">
+    <!-- Menu Highlight -->
     <div class="w-[70vh] h-full bg-red-400 flex flex-col">
         <div class="h-[45%] bg-[#cb9544] z-10 overflow-hidden">
             <div id="descNone" class="h-full w-full backdrop-blur-sm p-5">
                 <h1 class="text-3xl font-semibold">Pilih Kopimu</h1>
                 <p>Pilih kopi yang sesuai dengan keadaan hati anda, pilih dengan ikhlas 😊~</p>
             </div>
-            <div class="menuDesc text-white p-5 h-full w-full hidden desc1coff">
+            <div class="menuDesc menuAnim text-white p-5 h-full w-full hidden desc1coff">
                 <h1 class="text-3xl font-semibold">Kopi Arabika</h1>
-                <p class="">Lorem, ipsum dolor.</p>
+                <p class="">Aromatik, Beragam, dan Bersahabat.</p>
             </div>
-            <div class="menuDesc text-white p-5 h-full w-full hidden desc2coff">
+            <div class="menuDesc menuAnim text-white p-5 h-full w-full hidden desc2coff">
                 <h1 class="text-3xl font-semibold">Kopi Americano</h1>
-                <p class="">Lorem, ipsum dolor.</p>
+                <p class="">Kuat, Ringan, dan Penuh.</p>
             </div>
-            <div class="menuDesc text-white p-5 h-full w-full hidden desc3coff">
+            <div class="menuDesc menuAnim text-white p-5 h-full w-full hidden desc3coff">
                 <h1 class="text-3xl font-semibold">Kopi Capuccino</h1>
-                <p class="">Lorem, ipsum dolor.</p>
+                <p class="">Kreami, Berbusa, dan Hangat.</p>
             </div>
-            <div class="menuDesc text-white p-5 h-full w-full hidden desc4coff">
+            <div class="menuDesc menuAnim text-white p-5 h-full w-full hidden desc4coff">
                 <h1 class="text-3xl font-semibold">Kopi Latte</h1>
-                <p class="">Lorem, ipsum dolor.</p>
+                <p class="">Sutera, Lembut, dan Berlapis.</p>
             </div>
-            <div class="menuDesc text-white p-5 h-full w-full hidden desc5coff">
+            <div class="menuDesc menuAnim text-white p-5 h-full w-full hidden desc5coff">
                 <h1 class="text-3xl font-semibold">Kopi Macchiato</h1>
-                <p class="">Lorem, ipsum dolor.</p>
+                <p class="">Intens, Berlapis, dan Beraroma.</p>
             </div>
         </div>
+        <!-- Menu Highlight End -->
+        <!-- Menu Choise -->
         <div class="h-[60%] grid grid-rows-5 cursor-pointer">
             <div class="text-yellow-500 flex items-center text-2xl border-b border-gray-400 coffeeimg1">
-                <p class="w-full px-8 flex items-center h-full backdrop-blur-[2px] menu-coffee bg-[rgba(0,0,0,0.4)]" onclick="showMenu(1)">Kopi Arabika</p>
+                <p class="w-full px-8 flex items-center h-full backdrop-blur-[2px] menu-coffee bg-[rgba(0,0,0,0.4)]" onclick="showMenu(1), showDet(1)">Kopi Arabika</p>
             </div>
             <div class="text-yellow-500 flex items-center text-2xl border-b border-gray-400 coffeeimg2">
-                <p class="w-full px-8 flex items-center h-full backdrop-blur-[2px] menu-coffee bg-[rgba(0,0,0,0.4)]" onclick="showMenu(2)">Kopi Americano</p>
+                <p class="w-full px-8 flex items-center h-full backdrop-blur-[2px] menu-coffee bg-[rgba(0,0,0,0.4)]" onclick="showMenu(2), showDet(2)">Kopi Americano</p>
             </div>
             <div class="text-yellow-500 flex items-center text-2xl border-b border-gray-400 coffeeimg3">
-                <p class="w-full px-8 flex items-center h-full backdrop-blur-[2px] menu-coffee bg-[rgba(0,0,0,0.4)]" onclick="showMenu(3)">Kopi Capuccino</p>
+                <p class="w-full px-8 flex items-center h-full backdrop-blur-[2px] menu-coffee bg-[rgba(0,0,0,0.4)]" onclick="showMenu(3), showDet(3)">Kopi Capuccino</p>
             </div>
             <div class="text-yellow-500 flex items-center text-2xl border-b border-gray-400 coffeeimg4">
-                <p class="w-full px-8 flex items-center h-full backdrop-blur-[2px] menu-coffee bg-[rgba(0,0,0,0.4)]" onclick="showMenu(4)">Kopi Latte</p>
+                <p class="w-full px-8 flex items-center h-full backdrop-blur-[2px] menu-coffee bg-[rgba(0,0,0,0.4)]" onclick="showMenu(4), showDet(4)">Kopi Latte</p>
             </div>
             <div class="text-yellow-500 flex items-center text-2xl border-b border-gray-400 coffeeimg5">
-                <p class="w-full px-8 flex items-center h-full backdrop-blur-[2px] menu-coffee bg-[rgba(0,0,0,0.4)]" onclick="showMenu(5)">Kopi Macchiato</p>
+                <p class="w-full px-8 flex items-center h-full backdrop-blur-[2px] menu-coffee bg-[rgba(0,0,0,0.4)]" onclick="showMenu(5), showDet(5)">Kopi Macchiato</p>
             </div>
         </div>
+        <!-- Menu Choise End -->
     </div>
+
     <div class="h-full w-full text-white">
         <div class="h-full flex ">
-            <div class="w-[40%] p-5">
+            <div id="detNone" class="w-[40%] p-5">
+                <div class="h-[42%] border-b">
+                    <h3 class="font-semibold text-4xl">Pilih kopimu untuk melihat detailnya</h3>
+                    <p class="text-2xl">Rp ???????</p>
+                    <p class="my-1">Rating :</p>
+                    <p class="text-yellow-300 text-2xl p-1 mt-2">
+                    </p>
+                    <button class="px-6 py-2 bg-[#c99240] active:bg-[#6e4b20] rounded-md mt-6 font-semibold text-white duration-150 hover:-translate-y-[1px]">Beli Sekarang</button>
+                </div>
+                <div class="h-[58%]" >
+                    <div>
+                        <h4 class="text-xl">Rasa :</h4>
+                        <div class="grid grid-rows-2 grid-cols-2 border-b">
+                            <p>Pahit <span class="text-xl text-yellow-300">0%</span></p>
+                            <p>Manis <span class="text-xl text-yellow-300">0%</span></p>
+                            <p>Asin <span class="text-xl text-yellow-300">0%</span></p>
+                            <p>Asam <span class="text-xl text-yellow-300">0%</span></p>
+                        </div>
+                    </div>
+                    <div class="">
+                        <h3 class="text-xl mt-2">Tentang Kopi ini:</h3>
+                        <p class="text-justify mt-2">Pilih kopimu untuk mengetahui latar belakang kopi tersebut</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Menu Detail -->
+            <div class="menuDet1 w-[40%] p-5 hidden menuAnim" onclick="">
                 <div class="h-[42%] border-b">
                     <h3 class="font-semibold text-4xl">Kopi Arabika</h3>
                     <p class="text-2xl">Rp 35.000,00-</p>
@@ -194,13 +237,42 @@
                     </p>
                     <button class="px-6 py-2 bg-[#8b652c] active:bg-[#6e4b20] rounded-md mt-6 font-semibold text-white duration-150 hover:-translate-y-[1px]">Beli Sekarang</button>
                 </div>
-                <div class="h-[58%]">
+                <div class="h-[58%]" >
                     <div>
                         <h4 class="text-xl">Rasa :</h4>
                         <div class="grid grid-rows-2 grid-cols-2 border-b">
-                            <p>Pahit <span class="text-xl text-yellow-300">80%</span></p>
-                            <p>Manis <span class="text-xl text-yellow-300">13%</span></p>
-                            <p>Asin <span class="text-xl text-yellow-300">6%</span></p>
+                            <p>Pahit <span class="text-xl text-yellow-300">67%</span></p>
+                            <p>Manis <span class="text-xl text-yellow-300">10%</span></p>
+                            <p>Asin <span class="text-xl text-yellow-300">13%</span></p>
+                            <p>Asam <span class="text-xl text-yellow-300">10%</span></p>
+                        </div>
+                    </div>
+                    <div class="">
+                        <h3 class="text-xl mt-2">Tentang Kopi ini:</h3>
+                        <p class="text-justify mt-2">Kopi Arabika, yang merupakan salah satu varietas kopi paling populer di dunia, dikenal dengan profil rasa yang kompleks dan aromatik. Dibudidayakan di ketinggian yang tinggi, kopi Arabika menawarkan cita rasa yang lembut dengan sentuhan buah-buahan dan keasaman yang menyegarkan.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="menuDet2 w-[40%] p-5 hidden menuAnim" onclick="">
+                <div class="h-[42%] border-b">
+                    <h3 class="font-semibold text-4xl">Kopi Americano</h3>
+                    <p class="text-2xl">Rp 25.000,00-</p>
+                    <p class="my-1">Rating :</p>
+                    <p class="text-yellow-300 text-2xl p-1 mt-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </p>
+                    <button class="px-6 py-2 bg-[#8b652c] active:bg-[#6e4b20] rounded-md mt-6 font-semibold text-white duration-150 hover:-translate-y-[1px]">Beli Sekarang</button>
+                </div>
+                <div class="h-[58%]" >
+                    <div>
+                        <h4 class="text-xl">Rasa :</h4>
+                        <div class="grid grid-rows-2 grid-cols-2 border-b">
+                            <p>Pahit <span class="text-xl text-yellow-300">60%</span></p>
+                            <p>Manis <span class="text-xl text-yellow-300">20%</span></p>
+                            <p>Asin <span class="text-xl text-yellow-300">20%</span></p>
                             <p>Asam <span class="text-xl text-yellow-300">0%</span></p>
                         </div>
                     </div>
@@ -210,25 +282,189 @@
                     </div>
                 </div>
             </div>
+            <div class="menuDet3 w-[40%] p-5 hidden menuAnim" onclick="">
+                <div class="h-[42%] border-b">
+                    <h3 class="font-semibold text-4xl">Kopi Cappucino</h3>
+                    <p class="text-2xl">Rp 40.000,00-</p>
+                    <p class="my-1">Rating :</p>
+                    <p class="text-yellow-300 text-2xl p-1 mt-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </p>
+                    <button class="px-6 py-2 bg-[#8b652c] active:bg-[#6e4b20] rounded-md mt-6 font-semibold text-white duration-150 hover:-translate-y-[1px]">Beli Sekarang</button>
+                </div>
+                <div class="h-[58%]" >
+                    <div>
+                        <h4 class="text-xl">Rasa :</h4>
+                        <div class="grid grid-rows-2 grid-cols-2 border-b">
+                            <p>Pahit <span class="text-xl text-yellow-300">10%</span></p>
+                            <p>Manis <span class="text-xl text-yellow-300">76%</span></p>
+                            <p>Asin <span class="text-xl text-yellow-300">5%</span></p>
+                            <p>Asam <span class="text-xl text-yellow-300">5%</span></p>
+                        </div>
+                    </div>
+                    <div class="">
+                        <h3 class="text-xl mt-2">Tentang Kopi ini:</h3>
+                        <p class="text-justify mt-2">Cappuccino adalah minuman kopi yang terdiri dari espresso, susu, dan busa susu. Dikenal dengan rasa yang kreami dan berbusa, Cappuccino menawarkan kombinasi seimbang antara kekuatan espresso dan kelembutan susu.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="menuDet4 w-[40%] p-5 hidden menuAnim" onclick="">
+                <div class="h-[42%] border-b">
+                    <h3 class="font-semibold text-4xl">Kopi Latte</h3>
+                    <p class="text-2xl">Rp 37.000,00-</p>
+                    <p class="my-1">Rating :</p>
+                    <p class="text-yellow-300 text-2xl p-1 mt-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </p>
+                    <button class="px-6 py-2 bg-[#8b652c] active:bg-[#6e4b20] rounded-md mt-6 font-semibold text-white duration-150 hover:-translate-y-[1px]">Beli Sekarang</button>
+                </div>
+                <div class="h-[58%]" >
+                    <div>
+                        <h4 class="text-xl">Rasa :</h4>
+                        <div class="grid grid-rows-2 grid-cols-2 border-b">
+                            <p>Pahit <span class="text-xl text-yellow-300">23%</span></p>
+                            <p>Manis <span class="text-xl text-yellow-300">37%</span></p>
+                            <p>Asin <span class="text-xl text-yellow-300">3%</span></p>
+                            <p>Asam <span class="text-xl text-yellow-300">15%</span></p>
+                        </div>
+                    </div>
+                    <div class="">
+                        <h3 class="text-xl mt-2">Tentang Kopi ini:</h3>
+                        <p class="text-justify mt-2">Kopi Latte adalah minuman kopi yang terdiri dari espresso dan susu yang diuapkan, dengan lapisan busa susu di atasnya. Dikenal dengan kelembutan dan kehalusan rasanya, Latte menawarkan pengalaman yang lembut dan menggoda, seringkali disajikan dengan dekorasi latte art yang memikat.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="menuDet5 w-[40%] p-5 hidden menuAnim" onclick="">
+                <div class="h-[42%] border-b">
+                    <h3 class="font-semibold text-4xl">Kopi Macchiato</h3>
+                    <p class="text-2xl">Rp 45.000,00-</p>
+                    <p class="my-1">Rating :</p>
+                    <p class="text-yellow-300 text-2xl p-1 mt-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </p>
+                    <button class="px-6 py-2 bg-[#8b652c] active:bg-[#6e4b20] rounded-md mt-6 font-semibold text-white duration-150 hover:-translate-y-[1px]">Beli Sekarang</button>
+                </div>
+                <div class="h-[58%]" >
+                    <div>
+                        <h4 class="text-xl">Rasa :</h4>
+                        <div class="grid grid-rows-2 grid-cols-2 border-b">
+                            <p>Pahit <span class="text-xl text-yellow-300">30%</span></p>
+                            <p>Manis <span class="text-xl text-yellow-300">25%</span></p>
+                            <p>Asin <span class="text-xl text-yellow-300">10%</span></p>
+                            <p>Asam <span class="text-xl text-yellow-300">15%</span></p>
+                        </div>
+                    </div>
+                    <div class="">
+                        <h3 class="text-xl mt-2">Tentang Kopi ini:</h3>
+                        <p class="text-justify mt-2">Kopi Macchiato adalah minuman kopi yang terdiri dari espresso yang diberi "tanda" atau "coretan" susu. Dikenal dengan kekuatan dan intensitas rasa espresso yang dipertahankan, Macchiato memberikan sentuhan susu yang lembut namun menonjol, menciptakan keseimbangan yang unik antara keasaman dan kelembutan.</p>
+                    </div>
+                </div>
+            </div>
             <iframe class="h-full w-[60%]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254329.69530337202!2d119.23781107383378!3d-5.119574430838491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbf02913ab952cf%3A0x411b5b4ddbe2913d!2sMakassar%20City%2C%20South%20Sulawesi!5e0!3m2!1sen!2sid!4v1709619382176!5m2!1sen!2sid" ></iframe>
+            <!-- Menu Detail End -->
         </div>
     </div>
 </section>
 
+<!-- ========================================================= -->
+<!-- ===================== PRODUCT PAGE END =====================-->
+
 <script>
     function showMenu(menuNumber) {
-        let descNone = document.getElementById("descNone");
-        let menuDesc = document.querySelector(".menuDesc.desc" + menuNumber + "coff");
-        
-        // Hide all menu descriptions
-        document.querySelectorAll('.menuDesc').forEach(desc => {
-            desc.classList.add("hidden");
-        });
-        
-        // Show the selected menu description
-        descNone.classList.add("hidden");
-        menuDesc.classList.remove("hidden");
+    // Menentukan elemen-elemen yang akan diubah
+    let descNone = document.getElementById("descNone");
+    let detNone = document.getElementById("detNone");
+    let menuDesc = document.querySelector(".menuDesc.desc" + menuNumber + "coff");
+    
+    // Menyembunyikan semua menu descriptions
+    document.querySelectorAll('.menuDesc').forEach(desc => {
+        desc.classList.add("hidden");
+    });
+
+    // Menyembunyikan semua menu details
+
+    
+    // Menampilkan menu description dan menu detail yang dipilih
+    descNone.classList.add("hidden");
+    menuDesc.classList.remove("hidden");
+}
+
+// Fungsi untuk menampilkan Menu Detail sesuai dengan nomor yang dipilih
+function showDet(menuNumber) {
+    // Menggunakan metode getElementById untuk mengakses elemen-elemen Menu Detail
+    var menuDet1 = document.querySelector('.menuDet1');
+    var menuDet2 = document.querySelector('.menuDet2');
+    var menuDet3 = document.querySelector('.menuDet3');
+    var menuDet4 = document.querySelector('.menuDet4');
+    var menuDet5 = document.querySelector('.menuDet5');
+    var detNone = document.getElementById('detNone');
+
+    // Menggunakan switch case untuk menampilkan Menu Detail yang sesuai dengan nomor yang dipilih
+    switch (menuNumber) {
+        case 1:
+            // Menampilkan Menu Detail 1 dan menyembunyikan yang lainnya
+            detNone.classList.add("hidden")
+            menuDet1.classList.remove('hidden');
+            menuDet2.classList.add('hidden');
+            menuDet3.classList.add('hidden');
+            menuDet4.classList.add('hidden');
+            menuDet5.classList.add('hidden');
+            break;
+        case 2:
+            // Menampilkan Menu Detail 2 dan menyembunyikan yang lainnya
+            detNone.classList.add("hidden")
+            menuDet1.classList.add('hidden');
+            menuDet2.classList.remove('hidden');
+            menuDet3.classList.add('hidden');
+            menuDet4.classList.add('hidden');
+            menuDet5.classList.add('hidden');
+            break;
+        case 3:
+            // Menampilkan Menu Detail 3 dan menyembunyikan yang lainnya
+            detNone.classList.add("hidden")
+            menuDet1.classList.add('hidden');
+            menuDet2.classList.add('hidden');
+            menuDet3.classList.remove('hidden');
+            menuDet4.classList.add('hidden');
+            menuDet5.classList.add('hidden');
+            break;
+        case 4:
+            // Menampilkan Menu Detail 4 dan menyembunyikan yang lainnya
+            detNone.classList.add("hidden")
+            menuDet1.classList.add('hidden');
+            menuDet2.classList.add('hidden');
+            menuDet3.classList.add('hidden');
+            menuDet4.classList.remove('hidden');
+            menuDet5.classList.add('hidden');
+            break;
+        case 5:
+            // Menampilkan Menu Detail 5 dan menyembunyikan yang lainnya
+            detNone.classList.add("hidden")
+            menuDet1.classList.add('hidden');
+            menuDet2.classList.add('hidden');
+            menuDet3.classList.add('hidden');
+            menuDet4.classList.add('hidden');
+            menuDet5.classList.remove('hidden');
+            break;
+        default:
+            // Default case jika nomor menu tidak sesuai
+            console.log('Menu tidak ditemukan.');
+            break;
     }
+}
+
 </script>
 
 </body>
