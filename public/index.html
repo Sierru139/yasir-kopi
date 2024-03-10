@@ -67,7 +67,7 @@
         }
 
         .menuAnim {
-            animation: detmasuk 0.3s linear;
+            animation: detmasuk 0.2s linear;
         }
 
         .menu-coffee {
@@ -87,26 +87,57 @@
             0% {opacity: 0;}
             100% {opacity: 1;}
         }
+
+        .navrespo {
+            display: none;
+        }
+
+        .dot {
+            background-color: #c87133d3;
+            transition: .3s;
+            animation: navmasuk .3s linear;
+        }
+
+        .dotgone {
+            background-color: rgba(156, 119, 93, 0);
+            transition: .3s;
+            color: white;
+        }
+
+        @keyframes navmasuk {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+        
     </style>
 </head>
 <body>
 <!-- ===================== NAVIGATION BAR =====================-->
 <!-- ==========================================================-->
-<nav id="nav" class="left-0 right-0 h-16 bg-[#c6783fbf] flex items-center justify-between px-20 backdrop-blur-sm">
-    <a href="#" class="font-bold italic text-2xl"><span>Kop</span><span class="bg-clip-text text-transparent bg-gradient-to-l from-[#a28567] via-[#9a6c4a] to-[#a28567]">Yas</span></a>
-    <div>
-        <ul class="flex items-center gap-x-10 font-semibold">
+<nav id="nav" class="fixed dotgone right-0 left-0 top-0 h-14 flex items-center justify-between md:px-20 px-5 md:mx-0 z-40  backdrop-blur-sm">
+    <a href="#" class="font-bold italic text-2xl"><span>Kop</span><span class="bg-clip-text text-transparent bg-gradient-to-l from-[#bfa890] to-[#a28567]">Yas</span></a>
+    <div class="text-sm md:flex hidden gap-x-5">
+        <a href="#home" class="hover:underline active:text-white">Home</a>
+        <a href="#product" class="hover:underline active:text-white">Product</a>
+        <a href="#about" class="hover:underline active:text-white">About Us</a>
+        <a href="#contact" class="hover:underline active:text-white">Contact</a>
+    </div>
+    
+    <div class="md:hidden flex">
+        <button onclick="navrespons()" class="border-black p-2 mr-3"><i class="fa fa-bars text-[#381546]"></i></button>
+        <div id="navres" class="fixed p-2 gap-y-2 navrespo flex-col top-12 right-2 left-2 mt-3 text-lg bg-[#c6783fbf] rounded-md backdrop-blur text-center">
             <a href="#home" class="hover:underline active:text-white">Home</a>
             <a href="#product" class="hover:underline active:text-white">Product</a>
             <a href="#about" class="hover:underline active:text-white">About Us</a>
             <a href="#contact" class="hover:underline active:text-white">Contact</a>
-        </ul>
+        </div>
     </div>
-    <div class="flex gap-x-6">
-        <a href="#menu">
+    
+    <div class="md:flex hidden gap-x-6 ">
+        <a href="#product">
             <i class="fas fas fa-shopping-cart"></i>
         </a>
-        <a href="contact.html">
+        <a href="">
             <i class="fas fa-phone"></i>
         </a>
     </div>
@@ -114,19 +145,19 @@
 <!-- ==============================================================-->
 <!-- ===================== NAVIGATION BAR END =====================-->
 
-
+<!-- /////////////////////////////////////////////////////// -->
 
 <!-- ===================== HOME PAGE =====================-->
 <!-- ========================================================= -->
-<section id="home" class="h-screen grid grid-cols-2">
+<section id="home" class="h-screen md:grid grid-cols-2 flex">
     <!-- Desc /////////////////-->
-    <div class="flex flex-col col-span-1 items-start justify-center pl-10">
+    <div class="flex flex-col col-span-1 items-start justify-center md:pl-10 pl-3">
         <!-- Heading -->
         <h1 class="text-6xl font-bold jdlhome text-white">Nikmatnya Secangkir kopi di 
             <span class="bg-clip-text text-transparent bg-gradient-to-l from-[#c9a570] via-[#9a6c4a] to-[#c9a570]">KopYas</span> 
         </h1>
         <!-- Paragraph -->
-        <p class="mt-6 text-2xl text-[#e8bd7d] font-light w-[]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, consectetur. ~</p>
+        <p class="mt-6 text-2xl text-[#e8bd7d] font-light ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, consectetur. ~</p>
         <!-- Button -->
         <button class="px-6 py-2 bg-[#8b652c]  active:bg-[#6e4b20]  rounded-md mt-6 font-semibold text-white duration-150 hover:-translate-y-[1px]">Beli Sekarang</button>
     </div>
@@ -144,11 +175,11 @@
 <!-- ===================== PRODUCT PAGE =====================-->
 <!-- ========================================================= -->
 
-<section id="product" class="h-screen bg-[#a96738] flex items-start">
+<section id="product" class="h-screen bg-[#a96738] flex md:flex-row flex-col items-start">
     <!-- Menu Highlight -->
-    <div class="w-[70vh] h-full bg-red-400 flex flex-col">
-        <div class="h-[45%] bg-[#cb9544] z-10 overflow-hidden">
-            <div id="descNone" class="h-full w-full backdrop-blur-sm p-5">
+    <div class="md:w-[70vh] w-full h-full bg-[#cb9544] flex flex-col">
+        <div class="md:h-[45%] bg-[#cb9544] z-10 overflow-hidden">
+            <div id="descNone" class=" w-full backdrop-blur-sm p-5">
                 <h1 class="text-3xl font-semibold">Pilih Kopimu</h1>
                 <p>Pilih kopi yang sesuai dengan keadaan hati anda, pilih dengan ikhlas 😊~</p>
             </div>
@@ -174,8 +205,8 @@
             </div>
         </div>
         <!-- Menu Highlight End -->
-        <!-- Menu Choise -->
-        <div class="h-[60%] grid grid-rows-5 cursor-pointer">
+        <!-- Menu Choise ON DESKTOP-->
+        <div class="h-[60%] md:grid hidden grid-rows-5 cursor-pointer">
             <div class="text-yellow-500 flex items-center text-2xl border-b border-gray-400 coffeeimg1">
                 <p class="w-full px-8 flex items-center h-full backdrop-blur-[2px] menu-coffee bg-[rgba(0,0,0,0.4)]" onclick="showMenu(1), showDet(1)">Kopi Arabika</p>
             </div>
@@ -195,16 +226,15 @@
         <!-- Menu Choise End -->
     </div>
 
-    <div class="h-full w-full text-white">
-        <div class="h-full flex ">
-            <div id="detNone" class="w-[40%] p-5">
+    <div class="md:h-full w-full text-white">
+        <div class="md:h-full flex ">
+            <div id="detNone" class="md:w-[40%] p-5">
                 <div class="h-[42%] border-b">
                     <h3 class="font-semibold text-4xl">Pilih kopimu untuk melihat detailnya</h3>
                     <p class="text-2xl">Rp ???????</p>
                     <p class="my-1">Rating :</p>
                     <p class="text-yellow-300 text-2xl p-1 mt-2">
                     </p>
-                    <button class="px-6 py-2 bg-[#c99240] active:bg-[#6e4b20] rounded-md mt-6 font-semibold text-white duration-150 hover:-translate-y-[1px]">Beli Sekarang</button>
                 </div>
                 <div class="h-[58%]" >
                     <div>
@@ -223,7 +253,7 @@
                 </div>
             </div>
             <!-- Menu Detail -->
-            <div class="menuDet1 w-[40%] p-5 hidden menuAnim" onclick="">
+            <div class="menuDet1 md:w-[40%] p-5 hidden menuAnim" onclick="">
                 <div class="h-[42%] border-b">
                     <h3 class="font-semibold text-4xl">Kopi Arabika</h3>
                     <p class="text-2xl">Rp 35.000,00-</p>
@@ -253,7 +283,7 @@
                     </div>
                 </div>
             </div>
-            <div class="menuDet2 w-[40%] p-5 hidden menuAnim" onclick="">
+            <div class="menuDet2 md:w-[40%] p-5 hidden menuAnim" onclick="">
                 <div class="h-[42%] border-b">
                     <h3 class="font-semibold text-4xl">Kopi Americano</h3>
                     <p class="text-2xl">Rp 25.000,00-</p>
@@ -282,7 +312,7 @@
                     </div>
                 </div>
             </div>
-            <div class="menuDet3 w-[40%] p-5 hidden menuAnim" onclick="">
+            <div class="menuDet3 md:w-[40%] p-5 hidden menuAnim" onclick="">
                 <div class="h-[42%] border-b">
                     <h3 class="font-semibold text-4xl">Kopi Cappucino</h3>
                     <p class="text-2xl">Rp 40.000,00-</p>
@@ -312,7 +342,7 @@
                     </div>
                 </div>
             </div>
-            <div class="menuDet4 w-[40%] p-5 hidden menuAnim" onclick="">
+            <div class="menuDet4 md:w-[40%] p-5 hidden menuAnim" onclick="">
                 <div class="h-[42%] border-b">
                     <h3 class="font-semibold text-4xl">Kopi Latte</h3>
                     <p class="text-2xl">Rp 37.000,00-</p>
@@ -342,7 +372,7 @@
                     </div>
                 </div>
             </div>
-            <div class="menuDet5 w-[40%] p-5 hidden menuAnim" onclick="">
+            <div class="menuDet5 md:w-[40%] p-5 hidden menuAnim" onclick="">
                 <div class="h-[42%] border-b">
                     <h3 class="font-semibold text-4xl">Kopi Macchiato</h3>
                     <p class="text-2xl">Rp 45.000,00-</p>
@@ -368,12 +398,29 @@
                     </div>
                     <div class="">
                         <h3 class="text-xl mt-2">Tentang Kopi ini:</h3>
-                        <p class="text-justify mt-2">Kopi Macchiato adalah minuman kopi yang terdiri dari espresso yang diberi "tanda" atau "coretan" susu. Dikenal dengan kekuatan dan intensitas rasa espresso yang dipertahankan, Macchiato memberikan sentuhan susu yang lembut namun menonjol, menciptakan keseimbangan yang unik antara keasaman dan kelembutan.</p>
+                        <p class="text-justify mt-2">Kopi Macchiato adalah minuman kopi dengan espresso dan sedikit susu, menggabungkan kekuatan espresso dengan kelembutan susu dalam keseimbangan yang unik.</p>
                     </div>
                 </div>
             </div>
-            <iframe class="h-full w-[60%]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254329.69530337202!2d119.23781107383378!3d-5.119574430838491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbf02913ab952cf%3A0x411b5b4ddbe2913d!2sMakassar%20City%2C%20South%20Sulawesi!5e0!3m2!1sen!2sid!4v1709619382176!5m2!1sen!2sid" ></iframe>
+            <iframe class="h-full hidden md:block  w-0 md:w-[60%]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254329.69530337202!2d119.23781107383378!3d-5.119574430838491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbf02913ab952cf%3A0x411b5b4ddbe2913d!2sMakassar%20City%2C%20South%20Sulawesi!5e0!3m2!1sen!2sid!4v1709619382176!5m2!1sen!2sid" ></iframe>
             <!-- Menu Detail End -->
+        </div>
+        <div class="h-[60%] w-full md:hidden grid grid-rows-5 cursor-pointer">
+            <div class="text-yellow-500 flex items-center text-2xl border-b border-gray-400 coffeeimg1">
+                <p class="w-full px-8 flex items-center h-full backdrop-blur-[2px] menu-coffee bg-[rgba(0,0,0,0.4)]" onclick="showMenu(1), showDet(1)">Kopi Arabika</p>
+            </div>
+            <div class="text-yellow-500 flex items-center text-2xl border-b border-gray-400 coffeeimg2">
+                <p class="w-full px-8 flex items-center h-full backdrop-blur-[2px] menu-coffee bg-[rgba(0,0,0,0.4)]" onclick="showMenu(2), showDet(2)">Kopi Americano</p>
+            </div>
+            <div class="text-yellow-500 flex items-center text-2xl border-b border-gray-400 coffeeimg3">
+                <p class="w-full px-8 flex items-center h-full backdrop-blur-[2px] menu-coffee bg-[rgba(0,0,0,0.4)]" onclick="showMenu(3), showDet(3)">Kopi Capuccino</p>
+            </div>
+            <div class="text-yellow-500 flex items-center text-2xl border-b border-gray-400 coffeeimg4">
+                <p class="w-full px-8 flex items-center h-full backdrop-blur-[2px] menu-coffee bg-[rgba(0,0,0,0.4)]" onclick="showMenu(4), showDet(4)">Kopi Latte</p>
+            </div>
+            <div class="text-yellow-500 flex items-center text-2xl border-b border-gray-400 coffeeimg5">
+                <p class="w-full px-8 flex items-center h-full backdrop-blur-[2px] menu-coffee bg-[rgba(0,0,0,0.4)]" onclick="showMenu(5), showDet(5)">Kopi Macchiato</p>
+            </div>
         </div>
     </div>
 </section>
@@ -381,91 +428,17 @@
 <!-- ========================================================= -->
 <!-- ===================== PRODUCT PAGE END =====================-->
 
-<script>
-    function showMenu(menuNumber) {
-    // Menentukan elemen-elemen yang akan diubah
-    let descNone = document.getElementById("descNone");
-    let detNone = document.getElementById("detNone");
-    let menuDesc = document.querySelector(".menuDesc.desc" + menuNumber + "coff");
-    
-    // Menyembunyikan semua menu descriptions
-    document.querySelectorAll('.menuDesc').forEach(desc => {
-        desc.classList.add("hidden");
-    });
 
-    // Menyembunyikan semua menu details
+<!-- ===================== ABOUT PAGE =====================-->
+<!-- ========================================================= -->
 
-    
-    // Menampilkan menu description dan menu detail yang dipilih
-    descNone.classList.add("hidden");
-    menuDesc.classList.remove("hidden");
-}
+<div class="">
 
-// Fungsi untuk menampilkan Menu Detail sesuai dengan nomor yang dipilih
-function showDet(menuNumber) {
-    // Menggunakan metode getElementById untuk mengakses elemen-elemen Menu Detail
-    var menuDet1 = document.querySelector('.menuDet1');
-    var menuDet2 = document.querySelector('.menuDet2');
-    var menuDet3 = document.querySelector('.menuDet3');
-    var menuDet4 = document.querySelector('.menuDet4');
-    var menuDet5 = document.querySelector('.menuDet5');
-    var detNone = document.getElementById('detNone');
+</div>
 
-    // Menggunakan switch case untuk menampilkan Menu Detail yang sesuai dengan nomor yang dipilih
-    switch (menuNumber) {
-        case 1:
-            // Menampilkan Menu Detail 1 dan menyembunyikan yang lainnya
-            detNone.classList.add("hidden")
-            menuDet1.classList.remove('hidden');
-            menuDet2.classList.add('hidden');
-            menuDet3.classList.add('hidden');
-            menuDet4.classList.add('hidden');
-            menuDet5.classList.add('hidden');
-            break;
-        case 2:
-            // Menampilkan Menu Detail 2 dan menyembunyikan yang lainnya
-            detNone.classList.add("hidden")
-            menuDet1.classList.add('hidden');
-            menuDet2.classList.remove('hidden');
-            menuDet3.classList.add('hidden');
-            menuDet4.classList.add('hidden');
-            menuDet5.classList.add('hidden');
-            break;
-        case 3:
-            // Menampilkan Menu Detail 3 dan menyembunyikan yang lainnya
-            detNone.classList.add("hidden")
-            menuDet1.classList.add('hidden');
-            menuDet2.classList.add('hidden');
-            menuDet3.classList.remove('hidden');
-            menuDet4.classList.add('hidden');
-            menuDet5.classList.add('hidden');
-            break;
-        case 4:
-            // Menampilkan Menu Detail 4 dan menyembunyikan yang lainnya
-            detNone.classList.add("hidden")
-            menuDet1.classList.add('hidden');
-            menuDet2.classList.add('hidden');
-            menuDet3.classList.add('hidden');
-            menuDet4.classList.remove('hidden');
-            menuDet5.classList.add('hidden');
-            break;
-        case 5:
-            // Menampilkan Menu Detail 5 dan menyembunyikan yang lainnya
-            detNone.classList.add("hidden")
-            menuDet1.classList.add('hidden');
-            menuDet2.classList.add('hidden');
-            menuDet3.classList.add('hidden');
-            menuDet4.classList.add('hidden');
-            menuDet5.classList.remove('hidden');
-            break;
-        default:
-            // Default case jika nomor menu tidak sesuai
-            console.log('Menu tidak ditemukan.');
-            break;
-    }
-}
+<!-- ========================================================= -->
+<!-- ===================== ABOUT END =====================-->
 
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
