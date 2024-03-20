@@ -40,7 +40,7 @@
             text-shadow: 0px 0px 20px #9c775dbf;
         }
 
-        .coffeeimg1, .coffeeimg2, .coffeeimg3, .coffeeimg4, .coffeeimg5, .desc1coff, .desc2coff, .desc3coff, .desc4coff, .desc5coff{
+        .coffeeimg1, .coffeeimg2, .coffeeimg3, .coffeeimg4, .coffeeimg5, .desc1coff, .desc2coff, .desc3coff, .desc4coff, .desc5coff, .about1, .about2, .about3{
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -108,7 +108,23 @@
             0% {opacity: 0;}
             100% {opacity: 1;}
         }
-        
+
+        .navin {
+            animation: navmasuk 0.3s linear ;
+        }
+        .about1 {
+            background-image: url(img/close-up-cup-coffee.jpg);
+        }
+        .about2 {
+            background-image: url(img/friends-drinking-kombucha.jpg);
+        }
+        .about3 {
+            background-image: url(img/coffee-hands-women-s-hands-holds-hot-coffee-hands-outdoors-winter-cold-day.jpg);
+        }
+
+        .textabout {
+            text-shadow: 0px 0px 10px #69472fbf;
+        }
     </style>
 </head>
 <body>
@@ -125,7 +141,7 @@
     
     <div class="md:hidden flex">
         <button onclick="navrespons()" class="border-black p-2 mr-3"><i class="fa fa-bars text-[#381546]"></i></button>
-        <div id="navres" class="fixed p-2 gap-y-2 navrespo flex-col top-12 right-2 left-2 mt-3 text-lg bg-[#c6783fbf] rounded-md backdrop-blur text-center">
+        <div id="navres" class="fixed p-2 navin gap-y-2 navrespo flex-col top-12 right-2 left-2 mt-3 text-lg bg-[#c6783fbf] rounded-md backdrop-blur text-center">
             <a href="#home" class="hover:underline active:text-white">Home</a>
             <a href="#product" class="hover:underline active:text-white">Product</a>
             <a href="#about" class="hover:underline active:text-white">About Us</a>
@@ -157,9 +173,9 @@
             <span class="bg-clip-text text-transparent bg-gradient-to-l from-[#c9a570] via-[#9a6c4a] to-[#c9a570]">KopYas</span> 
         </h1>
         <!-- Paragraph -->
-        <p class="mt-6 text-2xl text-[#e8bd7d] font-light ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, consectetur. ~</p>
+        <p class="mt-3 mb-2 text-2xl text-[#e8bd7d] font-light ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, consectetur. ~</p>
         <!-- Button -->
-        <button class="px-6 py-2 bg-[#8b652c]  active:bg-[#6e4b20]  rounded-md mt-6 font-semibold text-white duration-150 hover:-translate-y-[1px]">Beli Sekarang</button>
+        <button class="px-6 py-2 bg-[#8b652c]  active:bg-[#6e4b20]  rounded-md mt-3 mb-2 font-semibold text-white duration-150 hover:-translate-y-[1px]">Beli Sekarang</button>
     </div>
     <!-- Coffee Img ////////////-->
     <div class="">
@@ -175,7 +191,7 @@
 <!-- ===================== PRODUCT PAGE =====================-->
 <!-- ========================================================= -->
 
-<section id="product" class="h-screen bg-[#a96738] flex md:flex-row flex-col items-start">
+<section id="product" class="md:h-screen bg-gradient-to-t from-[#7d5235] to-[#8b491a] flex md:flex-row flex-col items-start">
     <!-- Menu Highlight -->
     <div class="md:w-[70vh] w-full h-full bg-[#cb9544] flex flex-col">
         <div class="md:h-[45%] bg-[#cb9544] z-10 overflow-hidden">
@@ -226,17 +242,18 @@
         <!-- Menu Choise End -->
     </div>
 
+    <!-- Menu Detail -->
     <div class="md:h-full w-full text-white">
         <div class="md:h-full flex ">
             <div id="detNone" class="md:w-[40%] p-5">
-                <div class="h-[42%] border-b">
+                <div class=" border-b">
                     <h3 class="font-semibold text-4xl">Pilih kopimu untuk melihat detailnya</h3>
                     <p class="text-2xl">Rp ???????</p>
                     <p class="my-1">Rating :</p>
                     <p class="text-yellow-300 text-2xl p-1 mt-2">
                     </p>
                 </div>
-                <div class="h-[58%]" >
+                <div class="" >
                     <div>
                         <h4 class="text-xl">Rasa :</h4>
                         <div class="grid grid-rows-2 grid-cols-2 border-b">
@@ -253,8 +270,8 @@
                 </div>
             </div>
             <!-- Menu Detail -->
-            <div class="menuDet1 md:w-[40%] p-5 hidden menuAnim" onclick="">
-                <div class="h-[42%] border-b">
+            <div class="menuDet1 md:w-[40%] p-5 hidden menuAnim " onclick="">
+                <div class="md: border-b">
                     <h3 class="font-semibold text-4xl">Kopi Arabika</h3>
                     <p class="text-2xl">Rp 35.000,00-</p>
                     <p class="my-1">Rating :</p>
@@ -265,9 +282,9 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </p>
-                    <button class="px-6 py-2 bg-[#8b652c] active:bg-[#6e4b20] rounded-md mt-6 font-semibold text-white duration-150 hover:-translate-y-[1px]">Beli Sekarang</button>
+                    <button class="px-6 py-2 bg-[#8b652c] active:bg-[#6e4b20] rounded-md md:mt-3 mb-2 mt-3 font-semibold text-white duration-150 hover:-translate-y-[1px]">Beli Sekarang</button>
                 </div>
-                <div class="h-[58%]" >
+                <div class="md:" >
                     <div>
                         <h4 class="text-xl">Rasa :</h4>
                         <div class="grid grid-rows-2 grid-cols-2 border-b">
@@ -279,12 +296,12 @@
                     </div>
                     <div class="">
                         <h3 class="text-xl mt-2">Tentang Kopi ini:</h3>
-                        <p class="text-justify mt-2">Kopi Arabika, yang merupakan salah satu varietas kopi paling populer di dunia, dikenal dengan profil rasa yang kompleks dan aromatik. Dibudidayakan di ketinggian yang tinggi, kopi Arabika menawarkan cita rasa yang lembut dengan sentuhan buah-buahan dan keasaman yang menyegarkan.</p>
+                        <p class="text-justify mt-2">Kopi arabika, kopi yang diimport dari negara Arab, tempat penikmat kopi sejati berada, dengan rasa yang luar biasa anda pasti akan terpesona dengannya.</p>
                     </div>
                 </div>
             </div>
             <div class="menuDet2 md:w-[40%] p-5 hidden menuAnim" onclick="">
-                <div class="h-[42%] border-b">
+                <div class="md: border-b">
                     <h3 class="font-semibold text-4xl">Kopi Americano</h3>
                     <p class="text-2xl">Rp 25.000,00-</p>
                     <p class="my-1">Rating :</p>
@@ -294,9 +311,9 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </p>
-                    <button class="px-6 py-2 bg-[#8b652c] active:bg-[#6e4b20] rounded-md mt-6 font-semibold text-white duration-150 hover:-translate-y-[1px]">Beli Sekarang</button>
+                    <button class="px-6 py-2 bg-[#8b652c] active:bg-[#6e4b20] rounded-md mt-3 font-semibold text-white duration-150 hover:-translate-y-[1px] mb-2">Beli Sekarang</button>
                 </div>
-                <div class="h-[58%]" >
+                <div class="md:" >
                     <div>
                         <h4 class="text-xl">Rasa :</h4>
                         <div class="grid grid-rows-2 grid-cols-2 border-b">
@@ -313,7 +330,7 @@
                 </div>
             </div>
             <div class="menuDet3 md:w-[40%] p-5 hidden menuAnim" onclick="">
-                <div class="h-[42%] border-b">
+                <div class=" border-b">
                     <h3 class="font-semibold text-4xl">Kopi Cappucino</h3>
                     <p class="text-2xl">Rp 40.000,00-</p>
                     <p class="my-1">Rating :</p>
@@ -324,9 +341,9 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </p>
-                    <button class="px-6 py-2 bg-[#8b652c] active:bg-[#6e4b20] rounded-md mt-6 font-semibold text-white duration-150 hover:-translate-y-[1px]">Beli Sekarang</button>
+                    <button class="px-6 py-2 bg-[#8b652c] active:bg-[#6e4b20] rounded-md mt-3 font-semibold text-white duration-150 hover:-translate-y-[1px] mb-2">Beli Sekarang</button>
                 </div>
-                <div class="h-[58%]" >
+                <div class="" >
                     <div>
                         <h4 class="text-xl">Rasa :</h4>
                         <div class="grid grid-rows-2 grid-cols-2 border-b">
@@ -343,7 +360,7 @@
                 </div>
             </div>
             <div class="menuDet4 md:w-[40%] p-5 hidden menuAnim" onclick="">
-                <div class="h-[42%] border-b">
+                <div class=" border-b">
                     <h3 class="font-semibold text-4xl">Kopi Latte</h3>
                     <p class="text-2xl">Rp 37.000,00-</p>
                     <p class="my-1">Rating :</p>
@@ -354,9 +371,9 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </p>
-                    <button class="px-6 py-2 bg-[#8b652c] active:bg-[#6e4b20] rounded-md mt-6 font-semibold text-white duration-150 hover:-translate-y-[1px]">Beli Sekarang</button>
+                    <button class="px-6 py-2 bg-[#8b652c] active:bg-[#6e4b20] rounded-md mt-3 mb-2 font-semibold text-white duration-150 hover:-translate-y-[1px]">Beli Sekarang</button>
                 </div>
-                <div class="h-[58%]" >
+                <div class="" >
                     <div>
                         <h4 class="text-xl">Rasa :</h4>
                         <div class="grid grid-rows-2 grid-cols-2 border-b">
@@ -368,12 +385,12 @@
                     </div>
                     <div class="">
                         <h3 class="text-xl mt-2">Tentang Kopi ini:</h3>
-                        <p class="text-justify mt-2">Kopi Latte adalah minuman kopi yang terdiri dari espresso dan susu yang diuapkan, dengan lapisan busa susu di atasnya. Dikenal dengan kelembutan dan kehalusan rasanya, Latte menawarkan pengalaman yang lembut dan menggoda, seringkali disajikan dengan dekorasi latte art yang memikat.</p>
+                        <p class="text-justify mt-2">Kopi Latte: Espresso, susu uap, busa susu, lembut & menggoda, dengan latte art memikat. Kombinasi sempurna antara kekuatan dan kelembutan bagi pecinta kopi.</p>
                     </div>
                 </div>
             </div>
             <div class="menuDet5 md:w-[40%] p-5 hidden menuAnim" onclick="">
-                <div class="h-[42%] border-b">
+                <div class=" border-b">
                     <h3 class="font-semibold text-4xl">Kopi Macchiato</h3>
                     <p class="text-2xl">Rp 45.000,00-</p>
                     <p class="my-1">Rating :</p>
@@ -384,9 +401,9 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </p>
-                    <button class="px-6 py-2 bg-[#8b652c] active:bg-[#6e4b20] rounded-md mt-6 font-semibold text-white duration-150 hover:-translate-y-[1px]">Beli Sekarang</button>
+                    <button class="px-6 py-2 bg-[#8b652c] active:bg-[#6e4b20] rounded-md mt-3 mb-2 font-semibold text-white duration-150 hover:-translate-y-[1px]">Beli Sekarang</button>
                 </div>
-                <div class="h-[58%]" >
+                <div class="" >
                     <div>
                         <h4 class="text-xl">Rasa :</h4>
                         <div class="grid grid-rows-2 grid-cols-2 border-b">
@@ -423,18 +440,62 @@
             </div>
         </div>
     </div>
+    <!-- Menu Detail End -->
 </section>
 
 <!-- ========================================================= -->
 <!-- ===================== PRODUCT PAGE END =====================-->
 
+<!-- /////////////////////////////////////////////////////// -->
 
 <!-- ===================== ABOUT PAGE =====================-->
 <!-- ========================================================= -->
 
-<div class="">
-
-</div>
+<section class="grid md:grid-cols-3 md:grid-rows-2 grid-rows-4 bg-gradient-to-b from-[#7d5235] to-[#8b491a] text-white">
+    <div class="md:col-span-3 about1">
+        <div class="w-full h-full backdrop-blur-sm backdrop-sepia backdrop-brightness-50 flex flex-col justify-center items-center textabout">
+            <h1 class="text-5xl font-bold">Tentang Kami</h1>
+            <p class="font-light">Semua memiliki sejarahnya, termasuk KopYas</p>
+        </div>
+    </div>
+    <div class="bg-[#c47c4c]">
+        <div class="p-4 flex flex-col items-center justify-center text-justify">
+            <h1 class="text-2xl">Kopyas? Bentar, apa itu ?</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione fugit nulla illo iusto, error est doloribus voluptatem eveniet aspernatur. Maiores assumenda nihil, aperiam, autem laborum expedita excepturi cum tenetur, aliquid ex possimus facilis quos? Maiores quasi adipisci tempora laudantium cupiditate!</p>
+        </div>
+    </div>
+    <div class="bg-[#b4754a]">
+        <div class="p-4 flex flex-col items-center justify-center text-justify">
+            <h1 class="text-2xl">Sejarahnya gimana ?</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione fugit nulla illo iusto, error est doloribus voluptatem eveniet aspernatur. Maiores assumenda nihil, aperiam, autem laborum expedita excepturi cum tenetur, aliquid ex possimus facilis quos? Maiores quasi adipisci tempora laudantium cupiditate!</p>
+        </div>
+    </div>
+    <div class="bg-[#c47c4c]">
+        <div class="p-4 flex flex-col items-center justify-center text-justify">
+            <h1 class="text-2xl">Keren nih, share lock dong</h1>
+            <div class="flex gap-x-2">
+                <iframe class="w-[50%]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113626.5738518997!2d-109.46784074945269!3d-27.130150361803185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99481bd912a875cb%3A0x2d7629d40aea00db!2sMoai!5e0!3m2!1sen!2sid!4v1710226719923!5m2!1sen!2sid"  referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="w-[50%]">
+                    <ul>&#x2022;  Lokasi :
+                        <li>Laut Jl. Moai</li>
+                    </ul>
+                    <br>
+                    <ul>&#x2022;  No Telepon :
+                        <li>0852554422</li>
+                    </ul>
+                    <br>
+                    <ul>&#x2022;  Email :
+                        <li>yasirbanggw@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-3 w-full">
+                <h1 class="text-sm">berlangganan dengan kami</h1>
+                <input class="w-full" placeholder="example@gmail.com" type="text">
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- ========================================================= -->
 <!-- ===================== ABOUT END =====================-->
